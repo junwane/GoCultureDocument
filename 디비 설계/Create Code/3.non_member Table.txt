@@ -1,0 +1,7 @@
+create table non_member(
+  nm_no integer auto_increment,
+  nm_name varchar(80) not null,
+  nm_residentNum integer not null,
+  nm_phoneNum integer not null,
+  constraint pk_non_member_nm_no primary key(nm_no)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

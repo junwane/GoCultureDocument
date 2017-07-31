@@ -1,0 +1,9 @@
+create table notice_board(
+  nb_no integer auto_increment,
+  m_no integer not null,
+  nb_title varchar(80) not null,
+  nb_content varchar(3000) not null,
+  nb_date timestamp not null default now(),
+  constraint pk_notice_board_nb_no primary key(nb_no),
+  constraint fk_notice_board_m_no foreign key(m_no) references member(m_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

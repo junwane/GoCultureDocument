@@ -1,0 +1,10 @@
+create table member(
+  m_no integer auto_increment,
+  mg_no integer not null,
+  m_name varchar(30) null,
+  m_email varchar(80) null,
+  m_password varchar(80) null,
+  m_residentNum integer null,
+  constraint pk_member_m_no primary key(m_no),
+  constraint fk_member_mg_no foreign key(mg_no) references member_grade(mg_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

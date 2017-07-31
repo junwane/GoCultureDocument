@@ -1,0 +1,5 @@
+create table message(
+  msg_no integer not null,
+  msg_name varchar(60) not null,
+  constraint pk_message_msg_no primary key(msg_no)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

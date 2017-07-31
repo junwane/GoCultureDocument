@@ -1,0 +1,9 @@
+create table question_reply(
+  rq_no integer not null,
+  m_no integer not null,
+  qr_content varchar(3000) not null,
+  qr_register timestamp not null default now(),
+  constraint fk_question_reply_rq_no foreign key(rq_no) references review_question(rq_no) on delete cascade,
+  constraint fk_question_reply_m_no foreign key(m_no) references member(m_no) on delete cascade,
+  constraint pk_question_reply_rq_no primary key(rq_no,m_no)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

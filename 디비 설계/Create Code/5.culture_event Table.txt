@@ -1,0 +1,21 @@
+create table culture_event(
+  cul_no integer auto_increment,
+  cate_no integer not null,
+  m_no integer not null,
+  cul_mainimg varchar(255) not null,
+  cul_title varchar(60) not null,
+  cul_startDate timestamp not null default now(),
+  cul_endDate timestamp not null default now(),
+  cul_viewingTime integer not null,
+  cul_price integer not null default 0,
+  cul_content varchar(3000) null,
+  cul_discountInfo varchar(3000) null,
+  cul_questionNum integer Not Null,
+  cul_honePage varchar(255) not null,
+  cul_latitude varchar(255) not null,
+  cul_hardness varchar(255) not null,
+  cul_register timestamp not null default now(),
+  constraint pk_culture_event_cul_no primary key(cul_no),
+  constraint fk_culture_event_cate_no foreign key(cate_no) references category(cate_no) on delete cascade,
+  constraint fk_culture_event_m_no foreign key(m_no) references member(m_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

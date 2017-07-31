@@ -1,0 +1,11 @@
+create table notification(
+  msg_no integer not null,
+  send_no integer not null,
+  accept_no integer not null,
+  noti_date timestamp not null default now(),
+  noti_confirm varchar(10) not null,
+  constraint pk_notification_msg_no primary key(msg_no,send_no,accept_no,noti_date),
+  constraint fk_notification_msg_no foreign key(msg_no) references message(msg_no) on delete cascade,
+  constraint fk_notification_send_no foreign key(send_no) references member(m_no) on delete cascade,
+  constraint fk_notification_accept_no foreign key(accept_no) references member(m_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

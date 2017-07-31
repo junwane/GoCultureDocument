@@ -1,0 +1,8 @@
+create table gift_card_use(
+  gc_no integer not null,
+  gcu_date timestamp not null default now(),
+  gcu_content varchar(80) not null,
+  gcu_point integer not null,
+  constraint fk_gift_card_use_gc_no foreign key(gc_no) references gift_card(gc_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

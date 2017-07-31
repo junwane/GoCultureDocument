@@ -1,0 +1,14 @@
+create table review_question(
+  rq_no integer auto_increment,
+  cul_no integer not null,
+  m_no integer not null,
+  rq_title varchar(60) not null,
+  rq_content varchar(3000) not null,
+  rq_register timestamp not null default now(),
+  rq_img varchar(255) null,
+  rq_open varchar(10) null,
+  rq_division varchar(10) not null,
+  constraint pk_review_question_rq_no primary key(rq_no),
+  constraint fk_review_question_cul_no foreign key(cul_no) references culture_event(cul_no) on delete cascade,
+  constraint fk_review_question_m_no foreign key(m_no) references member(m_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

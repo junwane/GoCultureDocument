@@ -1,0 +1,5 @@
+create table member_grade(
+  mg_no integer auto_increment,
+  mg_name varchar(60) not null,
+  constraint pk_member_grade_mg_no primary key(mg_no)
+);

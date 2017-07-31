@@ -1,0 +1,5 @@
+create table earning_history(
+  eh_no integer auto_increment,
+  eh_name varchar(80) not null,
+  constraint pk_earning_history_eh_no primary key(eh_no)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

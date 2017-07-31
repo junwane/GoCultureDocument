@@ -1,0 +1,7 @@
+create table interest_event(
+  m_no integer not null,
+  cul_no integer not null,
+  ie_register timestamp not null default now(),
+  constraint fk_interest_event_m_no foreign key(m_no) references member(m_no) on delete cascade,
+  constraint fk_interest_event_cul_no foreign key(cul_no) references culture_event(cul_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,5 @@
+create table category(
+  cate_no integer auto_increment,
+  cate_name varchar(80) not null,
+  constraint pk_category_cate_no primary key(cate_no)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

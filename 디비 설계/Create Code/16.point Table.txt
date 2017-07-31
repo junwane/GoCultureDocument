@@ -1,0 +1,10 @@
+create table point (
+  m_no integer not null,
+  eh_no integer not null,
+  p_point integer not null,
+  p_date timestamp not null default now(),
+  p_useHistory varchar(80) null,
+  p_division varchar(10) not null,
+  constraint fk_point_m_no foreign key(m_no) references member(m_no) on delete cascade,
+  constraint fk_point_eh_no foreign key(eh_no) references earning_history(eh_no) on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
