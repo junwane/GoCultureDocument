@@ -1,6 +1,6 @@
 create table detailed_poster(
   cul_no integer not null,
   dp_detailedImg varchar(255) not null,
-  dp_sequence integer not null,
+  dp_sequence integer null,
   constraint fk_detailed_poster_cul_no foreign key(cul_no) references culture_event(cul_no) on delete cascade
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

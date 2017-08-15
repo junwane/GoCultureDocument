@@ -5,6 +5,8 @@ create table ticketing(
   nm_no integer null,
   t_quantity integer not null,
   t_totalPrice integer not null,
+  t_date timestamp not null,
+  t_register timestamp not null default now(),
   constraint pk_ticketing_t_no primary key(t_no),
   constraint fk_ticketing_m_no foreign key(m_no) references member(m_no) on delete cascade,
   constraint fk_ticketing_nm_no foreign key(nm_no) references non_member(nm_no) on delete cascade,

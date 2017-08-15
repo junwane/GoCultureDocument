@@ -6,8 +6,8 @@ create table gift_card(
   gc_title varchar(60) not null,
   gc_content varchar(3000) null,
   gc_point integer not null,
-  gc_date timestamp not null,
+  gc_date timestamp not null defualt now(),
   constraint pk_gift_card_gc_no primary key(gc_no),
-  constraint fk_gift_card_send_no foreign key(send_no) references member(m_no) on delete cascade,
-  constraint gk_gift_card_accept_no foreign key(accept_no) references member(m_no) on delete cascade
+  constraint fk_gift_card_send_no foreign key(send_no) references member(m_no)  on delete cascade,
+  constraint gk_gift_card_accept_no foreign key(accept_no) references member (m_no) on delete cascade
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
